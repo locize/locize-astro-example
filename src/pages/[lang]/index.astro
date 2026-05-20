@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 import { ui, type Lang } from '../../i18n/ui'
 import { useTranslations } from '../../i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 export function getStaticPaths () {
   return Object.keys(ui).map(lang => ({ params: { lang } }))
@@ -19,5 +20,9 @@ const t = useTranslations(lang)
     {t('index.description.part2')} <code>npm run syncLocales</code>
     {t('index.description.part3')}
   </p>
-  <p><a href={`/${lang}/second/`}>{t('index.goto.second')}</a></p>
+  <p>
+    <a href={getRelativeLocaleUrl(lang, 'second/')}>
+      {t('index.goto.second')}
+    </a>
+  </p>
 </Layout>
