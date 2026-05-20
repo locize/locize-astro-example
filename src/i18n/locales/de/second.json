@@ -1,0 +1,5 @@
+{
+  "title": "Die zweite Seite",
+  "body": "Routing-only i18n heisst: jedes URL-Präfix mappt auf eine Locale. /de/second rendert diese Seite auf Deutsch, /second auf Englisch.",
+  "back": "← Zurück zur Startseite"
+}

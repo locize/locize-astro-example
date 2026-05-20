@@ -1,0 +1,43 @@
+---
+import LanguagePicker from '../components/LanguagePicker.astro'
+import { useTranslations, type Lang } from '../i18n/utils'
+
+interface Props {
+  lang: Lang
+  title: string
+  description?: string
+}
+
+const { lang, title, description } = Astro.props
+const t = useTranslations(lang)
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <header>
+      <a class="skip-link" href="#main">{t('common.skipToContent')}</a>
+      <LanguagePicker currentLang={lang} />
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+
+    <style is:global>
+      html { font-family: system-ui, -apple-system, sans-serif; }
+      body { max-width: 60ch; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+      header { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+      .skip-link { position: absolute; left: -10000px; }
+      .skip-link:focus { left: 0; top: 0; padding: 0.5rem; background: #000; color: #fff; }
+      code { background: #f4f4f4; padding: 0.1rem 0.3rem; border-radius: 3px; }
+      a { color: #0066cc; }
+    </style>
+  </body>
+</html>

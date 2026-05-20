@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { ui, type Lang } from '../../i18n/ui'
+import { useTranslations } from '../../i18n/utils'
+
+export function getStaticPaths () {
+  return Object.keys(ui).map(lang => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params as { lang: Lang }
+const t = useTranslations(lang)
+---
+
+<Layout lang={lang} title={t('common.headTitle')} description={t('common.headDescription')}>
+  <h1>{t('index.title', { name: 'Astro' })}</h1>
+  <p>{t('index.subtitle')}</p>
+  <p>
+    {t('index.description.part1')} <code>src/i18n/locales/{lang}/index.json</code>
+    {t('index.description.part2')} <code>npm run syncLocales</code>
+    {t('index.description.part3')}
+  </p>
+  <p><a href={`/${lang}/second/`}>{t('index.goto.second')}</a></p>
+</Layout>

@@ -1,0 +1,8 @@
+{
+  "title": "Hello, {name}!",
+  "subtitle": "This page is rendered by Astro and translated by Locize.",
+  "description.part1": "Edit",
+  "description.part2": "to change this text — then run",
+  "description.part3": "to push the new keys up to Locize.",
+  "goto.second": "→ Visit the second page"
+}

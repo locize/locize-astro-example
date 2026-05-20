@@ -1,0 +1,5 @@
+{
+  "title": "The second page",
+  "body": "Routing-only i18n means each URL prefix maps to a locale: /de/second renders this in German, /second renders it in English.",
+  "back": "← Back home"
+}

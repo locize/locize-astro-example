@@ -1,0 +1,8 @@
+{
+  "title": "Hallo, {name}!",
+  "subtitle": "Diese Seite wird von Astro gerendert und von Locize übersetzt.",
+  "description.part1": "Bearbeiten Sie",
+  "description.part2": "um diesen Text zu ändern — dann führen Sie",
+  "description.part3": "aus, um die neuen Schlüssel zu Locize hochzuladen.",
+  "goto.second": "→ Zur zweiten Seite"
+}

@@ -1,0 +1,39 @@
+---
+import { languages, type Lang } from '../i18n/ui'
+import { useTranslations } from '../i18n/utils'
+
+interface Props {
+  currentLang: Lang
+}
+
+const { currentLang } = Astro.props
+const t = useTranslations(currentLang)
+
+// Compute the equivalent path in each other locale by swapping the
+// `/{lang}/` prefix in the current URL.  Works for any nested route.
+function pathForLang (target: Lang): string {
+  const { pathname } = Astro.url
+  const parts = pathname.split('/')
+  // pathname is "/en/foo/bar"  →  parts = ["", "en", "foo", "bar"]
+  parts[1] = target
+  return parts.join('/')
+}
+---
+
+<nav aria-label={t('common.languagePicker.label')}>
+  <ul>
+    {Object.entries(languages).map(([lang, label]) => (
+      <li>
+        {lang === currentLang ? (
+          <strong>{label}</strong>
+        ) : (
+          <a href={pathForLang(lang as Lang)}>{label}</a>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; }
+</style>

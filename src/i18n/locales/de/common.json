@@ -1,0 +1,6 @@
+{
+  "headTitle": "Locize + Astro",
+  "headDescription": "Ein Astro-6-Beispiel, das zeigt, wie sich Übersetzungen mit Locize per Build-Zeit-Sync verwalten lassen.",
+  "skipToContent": "Zum Inhalt springen",
+  "languagePicker.label": "Sprache wechseln"
+}
