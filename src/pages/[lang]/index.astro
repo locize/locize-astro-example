@@ -1,28 +1,28 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import { ui, type Lang } from '../../i18n/ui'
-import { useTranslations } from '../../i18n/utils'
+import { getT, languages, type Lang } from '../../i18n'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 
 export function getStaticPaths () {
-  return Object.keys(ui).map(lang => ({ params: { lang } }))
+  return Object.keys(languages).map(lang => ({ params: { lang } }))
 }
 
 const { lang } = Astro.params as { lang: Lang }
-const t = useTranslations(lang)
+const t = getT(lang, 'index')
 ---
 
-<Layout lang={lang} title={t('common.headTitle')} description={t('common.headDescription')}>
-  <h1>{t('index.title', { name: 'Astro' })}</h1>
-  <p>{t('index.subtitle')}</p>
+<Layout lang={lang} title={t('common:headTitle')} description={t('common:headDescription')}>
+  <h1>{t('title', { name: 'Astro' })}</h1>
+  <p>{t('subtitle')}</p>
+  <p>{t('loaves', { count: 1 })} · {t('loaves', { count: 3 })}</p>
   <p>
-    {t('index.description.part1')} <code>src/i18n/locales/{lang}/index.json</code>
-    {t('index.description.part2')} <code>npm run syncLocales</code>
-    {t('index.description.part3')}
+    {t('description.part1')} <code>src/i18n/locales/{lang}/index.json</code>
+    {t('description.part2')} <code>npm run syncLocales</code>
+    {t('description.part3')}
   </p>
   <p>
     <a href={getRelativeLocaleUrl(lang, 'second/')}>
-      {t('index.goto.second')}
+      {t('goto.second')}
     </a>
   </p>
 </Layout>

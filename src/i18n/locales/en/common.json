@@ -1,6 +1,6 @@
 {
   "headTitle": "Locize + Astro",
-  "headDescription": "An Astro 6 example showing how to manage translations with Locize via build-time sync.",
+  "headDescription": "An Astro example: i18next renders the texts at build time, Locize manages the translations.",
   "skipToContent": "Skip to content",
   "languagePicker.label": "Change language"
 }

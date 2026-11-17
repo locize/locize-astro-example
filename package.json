@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Astro 6 + built-in i18n routing + Locize example with build-time locize-cli sync.",
+  "description": "Astro 7 + built-in i18n routing + i18next at build time + Locize example with build-time locize-cli sync.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,9 +14,10 @@
     "syncLocales": "locize sync --project-id=$LOCIZE_PROJECT_ID --ver=latest --cdn-type=standard --api-key=$LOCIZE_API_KEY --path=./src/i18n/locales --dry=true"
   },
   "dependencies": {
-    "astro": "^6.3.6"
+    "astro": "^7.4.12",
+    "i18next": "^27.1.5"
   },
   "devDependencies": {
-    "locize-cli": "^12.1.1"
+    "locize-cli": "^12.10.9"
   }
 }

@@ -1,8 +1,10 @@
 {
-  "title": "Hallo, {name}!",
+  "title": "Hallo, {{name}}!",
   "subtitle": "Diese Seite wird von Astro gerendert und von Locize übersetzt.",
+  "loaves_one": "{{count}} Brot übrig",
+  "loaves_other": "{{count}} Brote übrig",
   "description.part1": "Bearbeiten Sie",
-  "description.part2": "um diesen Text zu ändern — dann führen Sie",
+  "description.part2": "um diesen Text zu ändern, dann führen Sie",
   "description.part3": "aus, um die neuen Schlüssel zu Locize hochzuladen.",
   "goto.second": "→ Zur zweiten Seite"
 }

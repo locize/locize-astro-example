@@ -1,23 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import { ui, type Lang } from '../../i18n/ui'
-import { useTranslations } from '../../i18n/utils'
+import { getT, languages, type Lang } from '../../i18n'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 
 export function getStaticPaths () {
-  return Object.keys(ui).map(lang => ({ params: { lang } }))
+  return Object.keys(languages).map(lang => ({ params: { lang } }))
 }
 
 const { lang } = Astro.params as { lang: Lang }
-const t = useTranslations(lang)
+const t = getT(lang, 'second')
 ---
 
-<Layout lang={lang} title={t('second.title')}>
-  <h1>{t('second.title')}</h1>
-  <p>{t('second.body')}</p>
+<Layout lang={lang} title={t('title')}>
+  <h1>{t('title')}</h1>
+  <p>{t('body')}</p>
   <p>
     <a href={getRelativeLocaleUrl(lang, '/')}>
-      {t('second.back')}
+      {t('back')}
     </a>
   </p>
 </Layout>

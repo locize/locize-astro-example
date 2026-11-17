@@ -1,8 +1,10 @@
 {
-  "title": "Hello, {name}!",
+  "title": "Hello, {{name}}!",
   "subtitle": "This page is rendered by Astro and translated by Locize.",
+  "loaves_one": "{{count}} loaf left",
+  "loaves_other": "{{count}} loaves left",
   "description.part1": "Edit",
-  "description.part2": "to change this text — then run",
+  "description.part2": "to change this text, then run",
   "description.part3": "to push the new keys up to Locize.",
   "goto.second": "→ Visit the second page"
 }
